@@ -1,0 +1,92 @@
+{
+  "your_position": {
+    "target": "$195,000 base salary with equity refresh - positions you in market range while acknowledging company stage",
+    "reservation_point": "$185,000 base salary - represents 6% increase and minimum to stay competitive without feeling undervalued",
+    "batna": "FAANG offer at $210K base + RSUs - represents 20% salary increase with additional equity upside",
+    "batna_strength": "strong",
+    "anchor_recommendation": "Open at $200-205K base plus equity refresh, citing market data and retention concerns",
+    "rationale": "Strong anchor above your target leaves room for negotiation while the FAANG offer validates this range. Starting high but reasonable given market comps shows you've done homework."
+  },
+  "their_estimated_position": {
+    "likely_target": "Retain you at $180-190K range to balance budget while showing meaningful increase",
+    "likely_reservation": "Up to $195-200K if absolutely necessary to prevent departure to FAANG",
+    "likely_batna": "Hire external replacement at $190-200K plus onboarding costs and productivity loss",
+    "constraints": [
+      "Series C budget allocation and compensation bands",
+      "Precedent concerns with other team members",
+      "Board/executive approval thresholds"
+    ],
+    "incentives": [
+      "Avoiding 3-6 month replacement timeline",
+      "Retaining institutional knowledge",
+      "Team stability and morale",
+      "Competitive hiring market making replacements expensive"
+    ]
+  },
+  "zopa": {
+    "exists": true,
+    "estimated_range": "$185K - $195K base salary zone with equity as additional variable",
+    "confidence_level": "high"
+  },
+  "leverage_points": [
+    {
+      "factor": "Peer departure precedent and salary data",
+      "who_it_favors": "you",
+      "how_to_use_it": "Reference specific peer salaries ($195-205K) as market validation - creates internal equity pressure they must address"
+    },
+    {
+      "factor": "Replacement cost analysis",
+      "who_it_favors": "you",
+      "how_to_use_it": "Highlight that external hires cost $190-200K plus 3-6 months productivity loss - makes your ask seem cost-effective"
+    },
+    {
+      "factor": "Timing and budget cycles",
+      "who_it_favors": "them",
+      "how_to_use_it": "They may push for delayed effective date or equity-heavy package to manage current budget constraints"
+    }
+  ],
+  "risk_factors": [
+    {
+      "risk": "Setting precedent that triggers other retention negotiations",
+      "probability": "high",
+      "mitigation": "Emphasize unique circumstances - external offer, peer departures, and your specific value delivery"
+    },
+    {
+      "risk": "Manager lacks authority for your target range",
+      "probability": "medium",
+      "mitigation": "Ask early about approval process and decision-making authority to avoid false negotiations"
+    },
+    {
+      "risk": "Company calls your bluff on external offer",
+      "probability": "low",
+      "mitigation": "Be prepared to actually leave - don't negotiate unless genuinely willing to walk"
+    }
+  ],
+  "tradeable_issues": [
+    {
+      "issue": "Equity refresh timing and amount",
+      "your_priority": "medium",
+      "their_likely_priority": "high"
+    },
+    {
+      "issue": "Effective date of salary increase",
+      "your_priority": "low",
+      "their_likely_priority": "high"
+    },
+    {
+      "issue": "Title progression or senior level designation",
+      "your_priority": "medium",
+      "their_likely_priority": "low"
+    },
+    {
+      "issue": "Performance bonus or retention bonus structure",
+      "your_priority": "medium",
+      "their_likely_priority": "medium"
+    },
+    {
+      "issue": "Flexible work arrangements or additional PTO",
+      "your_priority": "low",
+      "their_likely_priority": "low"
+    }
+  ]
+}

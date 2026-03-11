@@ -1,0 +1,44 @@
+{
+  "parties": [
+    {
+      "name": "You",
+      "role": "Senior Software Engineer",
+      "relationship": "Direct report to manager",
+      "estimated_power_level": "medium"
+    },
+    {
+      "name": "Sarah Chen",
+      "role": "Engineering Manager",
+      "relationship": "Direct manager of user",
+      "estimated_power_level": "medium"
+    }
+  ],
+  "stakes": {
+    "your_upside": "Salary increase to $195-210K range, staying with preferred team and company trajectory",
+    "your_downside": "Remaining at below-market $175K, potential resentment, or being forced to take external offer and leave preferred environment",
+    "their_upside": "Retaining high-performing engineer who delivered $2M in annual savings at reasonable cost increase",
+    "their_downside": "Losing proven performer to competitor, disrupting team dynamics, and facing expensive replacement/knowledge transfer costs"
+  },
+  "timeline": {
+    "negotiation_date": "next Thursday",
+    "decision_deadline": "Unknown; likely within 2-4 weeks based on typical review cycles and competing offer timeline",
+    "time_pressure_level": "medium"
+  },
+  "power_dynamics": {
+    "who_needs_whom_more": "Roughly balanced - you have strong external alternative but prefer to stay; they need to retain proven talent in competitive market",
+    "information_asymmetry": "You have advantage knowing exact competing offer details and peer salary data; they likely know company budget constraints and promotion pipeline",
+    "relationship_value": "High for both parties - you want to stay with this team, they want to retain someone who knows systems and delivers results"
+  },
+  "emotional_factors": {
+    "your_anxiety_points": [
+      "Being perceived as disloyal for having external offer",
+      "Manager not having budget authority for meaningful increase",
+      "Damaging relationship with preferred team if negotiation goes poorly"
+    ],
+    "their_likely_anxiety_points": [
+      "Losing high performer who delivered major cost savings",
+      "Setting precedent for other engineers with external offers",
+      "Budget constraints despite recent funding"
+    ]
+  }
+}

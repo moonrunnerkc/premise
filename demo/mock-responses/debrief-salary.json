@@ -1,0 +1,49 @@
+{
+  "outcome_summary": "Successfully negotiated $192K base salary (9.1% increase) plus 2000 additional RSUs and 6-month review guarantee. Counterparty shifted from budget-constrained resistance to creative problem-solving after external leverage was established.",
+  "prep_vs_reality": {
+    "position_accuracy": "Moderately accurate - identified counterparty's analytical nature and budget constraints correctly, but underestimated openness to creative compensation structures once external pressure was applied",
+    "scenario_accuracy": "Good prediction of initial resistance and pivot points, though the specific creative solutions (additional equity + review timeline) weren't fully anticipated in the scenario tree",
+    "simulation_accuracy": "Strong match on counterparty's measured, analytical communication style and the progression from defensive to collaborative positioning across negotiation rounds"
+  },
+  "lessons": [
+    {
+      "lesson": "External offers carry more psychological weight than just leverage - they reframe the entire conversation from 'can we afford this' to 'how do we retain talent'",
+      "evidence": "Sarah's pivot to collaborative problem-solving happened immediately after the FAANG offer was mentioned, shifting from budget defense to creative solutions",
+      "applies_to_future": "When negotiating retention with any employer where you have genuine external alternatives"
+    },
+    {
+      "lesson": "Analytical counterparties prefer structured compromise over salary-only solutions",
+      "evidence": "Sarah chose to offer additional equity and guaranteed review timeline rather than meet the full salary request, creating a more complex but mutually beneficial package",
+      "applies_to_future": "With data-driven managers or in companies with rigid salary bands but flexible equity/benefits structures"
+    },
+    {
+      "lesson": "Budget constraints are often negotiating positions, not hard limits, when retention becomes the priority",
+      "evidence": "Initial 'budget constraints' defense disappeared when faced with potential talent loss, revealing room for creative compensation solutions",
+      "applies_to_future": "When counterparts lead with budget limitations as their primary objection"
+    }
+  ],
+  "pattern_update": "Sarah responds to external pressure by becoming more collaborative and creative, preferring structured multi-component solutions over simple salary increases.",
+  "effectiveness_score": 7,
+  "scenario_verdicts": [
+    {
+      "scenario_id": "budget_constraints_hard_no",
+      "verdict": "partially_happened",
+      "notes": "Budget constraints were the initial defense but proved flexible when retention became the focus"
+    },
+    {
+      "scenario_id": "collaborative_problem_solving",
+      "verdict": "happened",
+      "notes": "Exactly as predicted - Sarah shifted to finding creative solutions after round 2"
+    },
+    {
+      "scenario_id": "external_offer_leverage",
+      "verdict": "happened_differently",
+      "notes": "FAANG offer was even more powerful than anticipated, immediately changing the conversation dynamic"
+    }
+  ],
+  "simulation_comparison": {
+    "most_realistic_round": 3,
+    "least_realistic_round": 1,
+    "counterparty_accuracy": "Very accurate on communication style and analytical approach, slightly underestimated the speed of pivot to collaborative mode once external leverage was established"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "negotiation_id": "8ae450ae-9ac2-4bce-b697-c2c5548df19f",
+  "root": {
+    "description": "Sarah opens salary negotiation requesting $195K base + $15K signing bonus, citing market rates and FAANG alternative."
+  },
+  "branches": [
+    {
+      "id": "branch-1",
+      "parent_id": null,
+      "counterparty_move": "\"Sarah, I appreciate your transparency about the market offer. We value you tremendously, but $195K would put you above our other Engineering Managers. We're thinking $182K base with accelerated equity vesting - keeps you competitive without breaking internal equity.\"",
+      "probability": "high",
+      "recommended_responses": [
+        {
+          "response": "\"I understand the internal equity concern, but my research shows Engineering Managers at post-Series C companies like ours are getting $195-205K. The three managers who left last quarter all landed in that range. This isn't about being above peers - it's about market correction.\"",
+          "rationale": "Reframes as external market reality rather than internal hierarchy issue",
+          "tradeoffs": "May trigger deeper budget constraint discussion",
+          "leads_to": "They either acknowledge market data or double down on budget limitations"
+        },
+        {
+          "response": "\"I appreciate the equity acceleration offer. Could we split the difference at $188K base plus the equity changes? That keeps me competitive while being mindful of the internal structure.\"",
+          "rationale": "Shows flexibility while maintaining upward pressure",
+          "tradeoffs": "Accepts lower than target but avoids prolonged negotiation",
+          "leads_to": "Likely counterproposal around $185-186K range"
+        }
+      ],
+      "emotional_temperature": "calm",
+      "page_title": "Internal Equity Objection - Market Correction Response"
+    },
+    {
+      "id": "branch-1a",
+      "parent_id": "branch-1",
+      "counterparty_move": "\"Look, I hear you on the market data, but we simply don't have budget flexibility above $185K right now. The board is watching compensation costs closely post-Series C. What if we do $185K plus a $10K retention bonus paid quarterly?\"",
+      "probability": "high",
+      "recommended_responses": [
+        {
+          "response": "\"I understand the board's focus on costs, but losing me now would cost far more than this difference. Between recruiting fees, onboarding, and the 3-month ramp time during our critical Q4 hiring push, you're looking at $80K+ in real costs plus opportunity cost. The retention bonus structure works - can we make it $185K base plus $15K retention bonus to match my original total ask?\"",
+          "rationale": "Quantifies replacement costs while accepting their structure preference",
+          "tradeoffs": "Accepts minimum base but negotiates bonus amount",
+          "leads_to": "Decision on bonus amount and payment structure"
+        }
+      ],
+      "emotional_temperature": "tense",
+      "page_title": "Budget Constraint Response - Cost of Replacement"
+    },
+    {
+      "id": "branch-1b",
+      "parent_id": "branch-1",
+      "counterparty_move": "\"We can't ignore internal equity, Sarah. If we give you $195K, every other EM will expect the same. That's potentially $200K in additional salary costs we haven't budgeted for.\"",
+      "probability": "medium",
+      "recommended_responses": [
+        {
+          "response": "\"I understand the concern about precedent. What if we structure this as a market adjustment with clear criteria - length of tenure, performance rating, and external offers? That way it's merit-based rather than automatic, and you control who qualifies.\"",
+          "rationale": "Provides face-saving mechanism while establishing precedent framework",
+          "tradeoffs": "May require documenting criteria that limits future flexibility",
+          "leads_to": "Discussion of criteria and documentation requirements"
+        }
+      ],
+      "emotional_temperature": "tense",
+      "page_title": "Precedent Concern - Merit-Based Framework"
+    },
+    {
+      "id": "branch-2",
+      "parent_id": null,
+      "counterparty_move": "\"Sarah, before we talk numbers, I need to understand - are you actually planning to leave if we can't meet your ask? Because this feels like we're being held hostage by a FAANG offer you may not even want to take.\"",
+      "probability": "medium",
+      "recommended_responses": [
+        {
+          "response": "\"I appreciate the direct question. Honestly, I prefer to stay here - the mission, the team, the trajectory all align with what I want. But I also can't ignore a $35K gap with the market. My FAANG offer expires Friday, so this isn't theoretical leverage - it's a real decision point I'm facing this week.\"",
+          "rationale": "Shows authenticity while maintaining time pressure and credibility",
+          "tradeoffs": "Reveals preference to stay but emphasizes real deadline",
+          "leads_to": "They either move quickly on offer or test your commitment further"
+        },
+        {
+          "response": "\"That's fair to ask directly. I have a signed offer letter with a Friday deadline, but you're right that I'd rather be here. The question is whether we can find a number that makes that preference economically rational.\"",
+          "rationale": "Demonstrates concrete leverage while positioning as problem-solving",
+          "tradeoffs": "High-stakes approach that could backfire if they call bluff",
+          "leads_to": "Accelerated negotiation timeline or potential standoff"
+        }
+      ],
+      "emotional_temperature": "tense",
+      "page_title": "Loyalty Test - Deadline Pressure Response"
+    },
+    {
+      "id": "branch-2a",
+      "parent_id": "branch-2",
+      "counterparty_move": "\"Okay, I believe you about the timeline and preference. Let me be equally direct - we can probably get to $190K base, but the signing bonus is tough to justify to finance. Would you consider $190K with a guarantee that we'll revisit in 6 months based on performance and company growth?\"",
+      "probability": "high",
+      "recommended_responses": [
+        {
+          "response": "\"$190K puts us much closer, and I appreciate the 6-month commitment. Could we formalize that review with specific criteria - if we hit our Q1 hiring targets and I maintain my performance level, we adjust to $195K? That gives you the performance validation you need.\"",
+          "rationale": "Accepts near-target base while securing upward path with measurable criteria",
+          "tradeoffs": "Delays full target achievement but reduces uncertainty",
+          "leads_to": "Negotiation of specific performance criteria and review process"
+        }
+      ],
+      "emotional_temperature": "calm",
+      "page_title": "Performance-Based Escalation Path"
+    },
+    {
+      "id": "branch-3",
+      "parent_id": null,
+      "counterparty_move": "\"Sarah, I'm going to be transparent with you. We're already 15% over budget on engineering salaries this quarter because of the competitive market. Any increase above $180K requires VP approval, and honestly, I'm not sure I can get that approved before your Friday deadline.\"",
+      "probability": "medium",
+      "recommended_responses": [
+        {
+          "response": "\"I appreciate the transparency about the budget situation and approval process. Given the Friday timeline, what if we agree on $180K effective immediately, with a commitment to seek VP approval for an additional $10K adjustment by end of month? That gives you time to make the case while showing good faith on both sides.\"",
+          "rationale": "Accommodates their process constraints while securing immediate partial win",
+          "tradeoffs": "Accepts significant concession with uncertain upside",
+          "leads_to": "Discussion of commitment terms and approval likelihood"
+        },
+        {
+          "response": "\"I understand the budget constraints. Can you at least get me in front of the VP this week? I'd rather make the case directly than have you carry the entire burden, especially given the time pressure we're both facing.\"",
+          "rationale": "Removes manager as bottleneck and demonstrates seriousness",
+          "tradeoffs": "Higher risk approach that could accelerate decision",
+          "leads_to": "VP meeting or manager's assessment of VP receptiveness"
+        }
+      ],
+      "emotional_temperature": "calm",
+      "page_title": "Approval Process Bottleneck - Phased Approach"
+    },
+    {
+      "id": "branch-3a",
+      "parent_id": "branch-3",
+      "counterparty_move": "\"I can try to get you that VP meeting, but honestly, she's been pretty rigid on the budget numbers. What's your absolute bottom line if the VP says no to anything above $180K? I need to know if this conversation is worth having.\"",
+      "probability": "medium",
+      "recommended_responses": [
+        {
+          "response": "\"My reservation point is $185K - that's the minimum that makes staying economically rational versus my alternative. Below that, I'd have to seriously consider the FAANG offer despite preferring to stay here.\"",
+          "rationale": "Clear bottom line creates decision framework while maintaining some pressure",
+          "tradeoffs": "Reveals reservation point but forces their decision-making",
+          "leads_to": "VP meeting with clear parameters or withdrawal from negotiation"
+        }
+      ],
+      "emotional_temperature": "tense",
+      "page_title": "Reservation Point Disclosure - Final Decision"
+    },
+    {
+      "id": "branch-4",
+      "parent_id": null,
+      "counterparty_move": "\"You know what, Sarah? You're right about the market rates, and we can't afford to lose you right now. I think we can make $195K work, but I'll need you to be flexible on start date - maybe defer two weeks so I can get the paperwork through finance properly.\"",
+      "probability": "low",
+      "recommended_responses": [
+        {
+          "response": "\"That's fantastic - thank you for recognizing the market reality. The two-week delay on effective date is absolutely workable, especially since my FAANG offer has a similar start timeline. Should we formalize this with an updated offer letter by Wednesday?\"",
+          "rationale": "Secures win while accommodating reasonable administrative need",
+          "tradeoffs": "Minor delay but achieves primary objective",
+          "leads_to": "Documentation and finalization process"
+        }
+      ],
+      "emotional_temperature": "calm",
+      "page_title": "Early Concession - Administrative Flexibility"
+    }
+  ]
+}

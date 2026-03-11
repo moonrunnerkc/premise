@@ -4,13 +4,13 @@ Build your premise before any high-stakes conversation.
 
 Premise is an MCP server that builds evidence-grounded preparation workspaces in Notion for salary discussions, contract renewals, client pitches, performance reviews, and vendor deals. It provides structured position analysis, scenario decision trees, interactive adversarial simulation with a coached AI counterparty, and post-negotiation outcome tracking.
 
-**Status:** All 7 tools implemented and validated against the live Anthropic API across 3 negotiation types (salary, freelance, vendor). Mock responses captured from real API calls. 55 tests passing. Full simulation pipeline tested end-to-end.
+**Status:** All 7 tools implemented and validated against the live Anthropic API across 3 negotiation types (salary, freelance, vendor). Mock responses captured from real API calls. 83 tests passing. Full simulation pipeline and Notion workspace creation tested end-to-end.
 
 ## Quick Start
 
 ```bash
 # Clone and install
-git clone https://github.com/your-username/premise.git
+git clone git@github.com:moonrunnerkc/premise.git
 cd premise
 npm install
 
@@ -116,6 +116,18 @@ src/
 workflow/            # Orchestrator prompt templates for Claude Desktop
 demo/mock-responses/ # Pre-recorded API responses for offline demo
 test/                # Unit tests (tools, lib) and integration tests
+```
+
+### Notion Integration Testing
+
+Requires `NOTION_TOKEN` and `NOTION_PARENT_PAGE_ID` in `.env`:
+
+```bash
+# Validate Notion API connectivity and workspace creation (15-step test)
+npx tsx scripts/test-notion-integration.ts
+
+# Full orchestrator flow: mock Premise tools + real Notion workspace
+npx tsx scripts/test-orchestrator-flow.ts
 ```
 
 ## License

@@ -21,8 +21,12 @@
     "negotiation",
     "preparation"
   ],
-  "author": "",
+  "author": "moonrunnerkc",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moonrunnerkc/premise.git"
+  },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
     "@modelcontextprotocol/sdk": "^1.27.1",

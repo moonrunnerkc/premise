@@ -156,8 +156,10 @@ export async function sendAnthropicConversation<T>(
 /**
  * Extracts JSON from a response that may contain markdown fences or preamble text.
  * Looks for the first { ... } or [ ... ] block, trying the largest match first.
+ *
+ * Exported for testing. Not intended for direct use by tool handlers.
  */
-function extractAndParseJson<T>(text: string): T {
+export function extractAndParseJson<T>(text: string): T {
   const trimmed = text.trim();
 
   // Try direct parse first (response is pure JSON)

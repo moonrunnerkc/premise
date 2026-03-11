@@ -9,21 +9,14 @@
 
 import type { AnalyzeOutput, PositionOutput } from "../types/schemas.js";
 import type { CounterpartyStyle } from "../types/negotiation.js";
+import { findCounterparty } from "../types/negotiation.js";
 
 export function buildCounterpartySystemPrompt(
   analysis: AnalyzeOutput,
   positions: PositionOutput,
   style: CounterpartyStyle
 ): string {
-  // Select the counterparty (skip the user who is typically first in the array)
-  const counterparty =
-    analysis.parties.length > 1
-      ? analysis.parties[1]
-      : analysis.parties[0] ?? {
-          name: "the counterparty",
-          role: "unknown",
-          relationship: "professional",
-        };
+  const counterparty = findCounterparty(analysis.parties);
 
   return `You are playing the role of ${counterparty.name} (${counterparty.role}) in a negotiation simulation. You are NOT an AI assistant. You are this person, in character, with your own goals, constraints, and psychology.
 

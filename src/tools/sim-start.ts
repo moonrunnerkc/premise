@@ -13,6 +13,7 @@ import type {
   CounterpartyPersona,
 } from "../types/session.js";
 import type { CounterpartyStyle, CounterpartyInnerState } from "../types/negotiation.js";
+import { findCounterparty } from "../types/negotiation.js";
 import { encodeSessionState } from "../lib/session-codec.js";
 import { sendAnthropicRequest } from "../lib/anthropic.js";
 import {
@@ -153,16 +154,12 @@ function buildPersona(
   input: SimStartInput,
   style: CounterpartyStyle
 ): CounterpartyPersona {
-  // Select the counterparty from parties array (skip the user, who is typically first)
-  const counterparty =
-    input.analysis.parties.length > 1
-      ? input.analysis.parties[1]
-      : input.analysis.parties[0];
+  const counterparty = findCounterparty(input.analysis.parties);
   const theirPosition = input.positions.their_estimated_position;
 
   return {
-    name: counterparty?.name ?? "Counterparty",
-    role: counterparty?.role ?? "Unknown",
+    name: counterparty.name,
+    role: counterparty.role,
     style,
     estimated_target: theirPosition.likely_target,
     estimated_reservation: theirPosition.likely_reservation,

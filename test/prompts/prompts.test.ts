@@ -16,11 +16,25 @@ import {
   buildScenarioGenSystemPrompt,
   buildScenarioGenUserMessage,
 } from "../../src/prompts/scenario-gen.js";
+import {
+  buildPositionSystemPrompt,
+  buildPositionUserMessage,
+} from "../../src/prompts/position.js";
+import {
+  buildPostMortemSystemPrompt,
+  buildPostMortemUserMessage,
+} from "../../src/prompts/post-mortem.js";
 import type { AnalyzeOutput, PositionOutput } from "../../src/types/schemas.js";
 
 const SAMPLE_ANALYSIS: AnalyzeOutput = {
   negotiation_id: "test-123",
   parties: [
+    {
+      name: "You",
+      role: "Senior Software Engineer",
+      relationship: "Direct report",
+      estimated_power_level: "medium",
+    },
     {
       name: "Sarah Chen",
       role: "Engineering Manager",
@@ -188,5 +202,69 @@ describe("scenario-gen prompt", () => {
     );
     expect(message).toContain("budget freeze");
     expect(message).toContain("Special Focus");
+  });
+});
+
+describe("position prompt", () => {
+  it("builds system prompt requesting ZOPA and leverage analysis", () => {
+    const prompt = buildPositionSystemPrompt();
+    expect(prompt).toContain("ZOPA");
+    expect(prompt).toContain("leverage_points");
+    expect(prompt).toContain("tradeable_issues");
+    expect(prompt).toContain("risk_factors");
+  });
+
+  it("includes user targets and analysis context in user message", () => {
+    const message = buildPositionUserMessage({
+      negotiation_id: "test-123",
+      analysis: SAMPLE_ANALYSIS,
+      your_target: "$145,000",
+      your_minimum: "$135,000",
+      your_batna: "Competing offer at $140,000",
+    });
+    expect(message).toContain("$145,000");
+    expect(message).toContain("$135,000");
+    expect(message).toContain("Competing offer at $140,000");
+    expect(message).toContain("Sarah Chen");
+  });
+
+  it("includes market context when provided", () => {
+    const message = buildPositionUserMessage({
+      negotiation_id: "test-123",
+      analysis: SAMPLE_ANALYSIS,
+      your_target: "$145,000",
+      your_minimum: "$135,000",
+      market_context: "Average senior engineer salary is $140K in this market.",
+    });
+    expect(message).toContain("Market Context");
+    expect(message).toContain("Average senior engineer salary");
+  });
+});
+
+describe("post-mortem prompt", () => {
+  it("builds system prompt requesting round-specific analysis", () => {
+    const prompt = buildPostMortemSystemPrompt();
+    expect(prompt).toContain("strengths");
+    expect(prompt).toContain("weaknesses");
+    expect(prompt).toContain("missed_opportunities");
+    expect(prompt).toContain("specific round");
+  });
+
+  it("formats transcript and inner states in user message", () => {
+    const message = buildPostMortemUserMessage(
+      [
+        { round: 1, speaker: "user", message: "I want a raise.", tactical_note: null },
+        { round: 1, speaker: "counterparty", message: "Tell me more.", tactical_note: "They are probing." },
+      ],
+      [
+        { round: 1, private_thoughts: "Strong opening", concession_readiness: "firm", probing_intent: "testing resolve" },
+      ],
+      "completed"
+    );
+    expect(message).toContain("I want a raise.");
+    expect(message).toContain("Tell me more.");
+    expect(message).toContain("Strong opening");
+    expect(message).toContain("firm");
+    expect(message).toContain("completed");
   });
 });

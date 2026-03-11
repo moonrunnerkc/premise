@@ -195,3 +195,27 @@ export interface SimulationComparison {
   readonly least_realistic_round: number | null;
   readonly counterparty_accuracy: string;
 }
+
+/**
+ * Find the counterparty from a parties array.
+ *
+ * Searches for the first party whose name is NOT "You" (the user).
+ * Falls back to parties[1] if all parties have non-"You" names,
+ * then parties[0] if only one party exists.
+ */
+export function findCounterparty(
+  parties: readonly Party[]
+): Party {
+  const nonUser = parties.find(
+    (p) => p.name.toLowerCase() !== "you"
+  );
+  if (nonUser) return nonUser;
+
+  // All parties named "You" (shouldn't happen), fall back to last entry
+  return parties[parties.length - 1] ?? {
+    name: "Counterparty",
+    role: "Unknown",
+    relationship: "professional",
+    estimated_power_level: "medium" as const,
+  };
+}

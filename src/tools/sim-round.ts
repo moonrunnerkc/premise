@@ -91,7 +91,7 @@ export async function handleSimRound(
       input.your_response,
       counterpartyResponse.dialogue,
       counterpartyResponse.hidden_metadata,
-      state.tactical_notes ?? []
+      state.tactical_notes
     );
     const { parsed: coachResponse } =
       await sendAnthropicRequest<TacticalCoachResponse>(
@@ -110,7 +110,7 @@ export async function handleSimRound(
         },
       ],
       inner_states: [...state.inner_states, innerState],
-      tactical_notes: [...(state.tactical_notes ?? []), coachResponse.tactical_note],
+      tactical_notes: [...state.tactical_notes, coachResponse.tactical_note],
       round: nextRound,
     };
 
@@ -120,7 +120,10 @@ export async function handleSimRound(
       tactical_note: coachResponse.tactical_note,
       round: nextRound,
       status,
-      deal_terms: status === "deal_reached" ? counterpartyResponse.dialogue : null,
+      deal_terms:
+        status === "deal_reached"
+          ? `Counterparty's closing statement: ${counterpartyResponse.dialogue}`
+          : null,
     };
 
     logInfo(TOOL_NAME, `Round ${nextRound} complete, status: ${status}`);

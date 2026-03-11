@@ -53,7 +53,11 @@ export function decodeSessionState(
       throw new Error("Missing required fields in decoded session state");
     }
 
-    return parsed;
+    // Normalize fields added after initial version to handle older session blobs
+    return {
+      ...parsed,
+      tactical_notes: parsed.tactical_notes ?? [],
+    };
   } catch (error) {
     if (error instanceof SyntaxError) {
       throw new Error(

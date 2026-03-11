@@ -31,6 +31,12 @@ const mockAnalysis: AnalyzeOutput = {
   negotiation_id: "sim-test",
   parties: [
     {
+      name: "You",
+      role: "Senior Software Engineer",
+      relationship: "Direct report",
+      estimated_power_level: "medium",
+    },
+    {
       name: "Sarah Chen",
       role: "Engineering Manager",
       relationship: "Direct manager",

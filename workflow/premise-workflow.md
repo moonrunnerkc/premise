@@ -58,14 +58,14 @@ When the user describes a negotiation or high-stakes conversation:
 Create the Premise workspace in Notion:
 
 1. **Create parent page**: Title "Premise: [Negotiation Title]"
+   - If creating a workspace-root page fails, search for an existing page you can write under and create the Premise parent page as its child.
 2. **Create Position Analysis page** as a child of the parent:
    - Format the position analysis as rich text using the data from Phase 2
    - Include sections: Your Position, Their Estimated Position, ZOPA Analysis, Leverage Points
 3. **Create Scenario Database** as a child of the parent:
    - Call `premise-scenarios` with the analysis and positions
-   - Create a Notion database with properties:
-     - Title (title)
-     - Parent Scenario (relation to self)
+   - If your Notion MCP exposes `API-create-a-database` (v1.x), create a Notion database. Create it with these properties first:
+     - Title (title) (this is the scenario page title)
      - Probability (select: High / Medium / Low)
      - Emotional Temperature (select: Calm / Tense / Heated)
      - Recommended Response (rich text)
@@ -74,8 +74,16 @@ Create the Premise workspace in Notion:
      - Status (select: Unexplored / Prepared / Practiced)
      - Outcome (select: Happened / Partially Happened / Did Not Happen / Happened Differently)
      - Debrief Notes (rich text)
-   - Create a database entry for each scenario branch
-   - Set the Parent Scenario relation for child branches
+   - Then add **Parent Scenario** (relation to self) with `API-update-a-database` once you have the new database id.
+   - Create a database entry for each scenario branch (use `API-post-page` with parent.database_id)
+   - Set the Parent Scenario relation for child branches after the relation property exists
+
+   - If your Notion MCP does not expose `API-create-a-database` (v2.x), do not attempt to create a database with data sources. Create a readable Scenario Tree page instead, then continue to Phase 4.
+
+   Notes:
+   - The database tools (`API-create-a-database`, `API-update-a-database`) exist in Notion MCP v1.x. Notion MCP v2.x moved to data sources and does not expose the same create database flow.
+   - If Notion tool calls return 401 and your token starts with `ntn_`, run Notion MCP v2.x for basic page operations, or use a legacy internal integration token that starts with `secret_` with Notion MCP v1.x.
+   - If database creation is blocked, fall back to a readable Scenario Tree page with one child page per scenario branch, and continue to Phase 4.
 4. **Create Raw Analysis page** (collapsed) as a child of the parent:
    - Store the full JSON outputs from all tools for reference
 
@@ -157,3 +165,21 @@ When the user returns after their real negotiation:
 - If any Premise tool call fails, tell the user and offer to retry.
 - Keep the tone direct and practical. The user has a real conversation coming up.
 - Do not use em dashes in any output.
+<<<<<<< HEAD
+=======
+
+### Tool Failure Handling (Important)
+
+If a Premise tool call fails with an authentication error (401 / invalid x-api-key):
+
+- Do not claim you changed server configuration. You cannot edit MCP server env from inside the chat.
+- Tell the user the Premise MCP server needs a valid `ANTHROPIC_API_KEY` and Claude Desktop must be restarted after updating it.
+- Offer two concrete recovery paths:
+   - Live mode: set `ANTHROPIC_API_KEY` correctly, ensure `PREMISE_MOCK_DIR` is not set, restart Claude Desktop, retry the tool.
+   - Demo mode (fixtures): set `PREMISE_MOCK_DIR` to the repo's `demo/mock-responses` path, restart Claude Desktop, retry the tool. In demo mode outputs are recorded fixtures, not tailored to the user's exact situation.
+
+If Notion tool calls fail (missing or invalid token):
+
+- Explain that Notion MCP requires a valid `NOTION_TOKEN` and Claude Desktop must be restarted after updating it.
+- Continue with Premise analysis and simulation even if Notion writes fail.
+>>>>>>> f163be4 (Initial commit: Premise MCP server)

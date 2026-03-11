@@ -6,14 +6,20 @@
  */
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { getConfig } from "./lib/config.js";
+import { logError, logInfo } from "./lib/logger.js";
 import { createPremiseServer } from "./server.js";
-import { logInfo, logError } from "./lib/logger.js";
 
 async function main(): Promise<void> {
   const server = createPremiseServer();
   const transport = new StdioServerTransport();
 
   logInfo("server", "Premise MCP server starting");
+  const config = getConfig();
+  logInfo(
+    "server",
+    `Mode: ${config.mockDir ? "mock" : "live"}; model: ${config.model}`
+  );
 
   try {
     await server.connect(transport);
